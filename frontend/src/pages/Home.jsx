@@ -43,9 +43,10 @@ function Home() {
 
   return (
     <div className="d-flex justify-content-center align-items-center vw-100 vh-100 bg-secondary">
-      <div className='h-75 w-50 p-3 border d-flex flex-column justify-content-center align-items-center gap-2 bg-white rounded overflow-y-scroll'>
+      <div className='h-75 w-50 p-3 border d-flex flex-column justify-content-center align-items-center gap-2 bg-white rounded overflow-y-scroll shadow-lg'>
           <h1>Tarefas</h1>
           <input
+            className='form-control w-50 text-center'
             type="text"
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
@@ -54,7 +55,7 @@ function Home() {
           <button className="btn btn-primary" onClick={addTask}>Adicionar</button>
           <ul className='d-flex flex-column list-style-none w-75 gap-2 list-group'>
               {tasks.map(task => (
-                <li key={task._id} className='w-100 d-flex justify-content-between list-group-item'>
+                <li key={task._id} className='w-100 d-flex justify-content-between list-group-item shadow'>
                   <span
                     style={{ textDecoration: task.completed ? 'line-through' : 'none', cursor: 'pointer' }}
                   >
