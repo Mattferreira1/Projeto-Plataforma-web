@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import { useContext } from "react";
 import { context } from "../Contexts/AuthContext";
 import LandingPage from "../pages/LandingPage";
+import Cadastro from "../pages/Cadastro";
 
 const Paths = () => {
 
@@ -16,6 +17,8 @@ const Paths = () => {
                 <Route path="/" element={<LayoutPage/>}>
                     <Route index element={<LandingPage/>}/>
                     <Route path="/Login" element={<Login/>}/>
+                    <Route path="/Cadastro" element={<Cadastro/>}/>
+
                     {
                         logado &&(
                             <>

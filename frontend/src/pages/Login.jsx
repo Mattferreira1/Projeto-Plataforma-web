@@ -61,6 +61,7 @@ const Login = () => {
                     type="submit"
                     className="w-full"
                      />
+                <Link to="/Cadastro" className="mt-2">Cadastrar</Link>
             </form>
         </div>
         <Link to="/Home">Home</Link>
