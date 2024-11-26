@@ -1,6 +1,16 @@
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Cadastro = () => {
+    function register(){
+        let data = {
+            email: "teste323232@gmail.com",
+            password: "123@dsa2"
+        }
+        axios.post("http://localhost:3001/register", data).then(function (response) {
+            console.log(response.data)
+        })
+    }
     return ( 
         <>
 
@@ -9,21 +19,11 @@ const Cadastro = () => {
                 <h1 class="h3 text-center mb-4">Cadastro</h1>
                 <form action="">
                     <div class="mb-3">
-                        <label class="form-label" for="username">Nome de usuário</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="username" id="username"/>
-                        </div>
-                    </div>
-                    <div class="mb-3">
                         <label class="form-label" for="email">E-mail</label>
                         <div class="input-group">
                             <input class="form-control" type="email" name="email" id="email"/>
-                            <span class="input-group-text">@exemplo.com</span>
+                            <span class="input-group-text">@gmail.com</span>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="age">Data de nascimento</label>
-                        <input class="form-control" type="date" name="age" id="age"/>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="">Senha</label>
@@ -40,7 +40,7 @@ const Cadastro = () => {
                         <input class="form-check-input" type="checkbox" name="terms" id="terms"/> 
                         <label class="form-label" for="">Concordo com os Termos e Serviço</label>
                     </div>
-                    <button class="btn btn-primary w-100">Cadastrar</button>
+                    <button class="btn btn-primary w-100" onClick={register}>Cadastrar</button>
                     <Link to="/Login" className="mt-2">Voltar</Link>
                 </form>
             </div>
