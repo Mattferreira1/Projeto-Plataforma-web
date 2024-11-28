@@ -6,7 +6,7 @@
   <li>Digitar "cd server"</li>
   <li>Digitar "nodemon server.js"</li>
 </ul>
-<p>Appós esse procedimento, será exibido uma mensagem no terminal indicando que o servver conectou com o mongoDB atlas</p>
+<p>Após esse procedimento, será exibido uma mensagem no terminal indicando que o servver conectou com o mongoDB atlas</p>
 
 <p>.Front-end</p>
 <ul>
@@ -15,3 +15,5 @@
   <li>Abrir o link indicado no terminal</li>
 
 </ul>
+
+<p>No final vvoc6e será capaz de utilizar a aplicação normalmente</p>
