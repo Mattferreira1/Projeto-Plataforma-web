@@ -3,19 +3,20 @@ import axios from 'axios';
 import trash from "../assets/trash-svgrepo-com.svg"
 import complete from "../assets/complete.svg"
 import "../style.css"
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
 
-  // Buscar tarefas
+
   useEffect(() => {
     axios.get('http://localhost:3001/tasks')
       .then(response => setTasks(response.data))
       .catch(error => console.error(error));
   }, []);
 
-  // Adicionar tarefa
+ 
   const addTask = () => {
     if (newTask.trim()) {
       axios.post('http://localhost:3001/tasks', { title: newTask })
@@ -25,7 +26,7 @@ function Home() {
     }
   };
 
-  // Alternar status da tarefa
+  
   const toggleTask = (id, completed) => {
     axios.put(`http://localhost:3001/tasks/${id}`, { completed: !completed })
       .then(response => {
@@ -34,7 +35,7 @@ function Home() {
       .catch(error => console.error(error));
   };
 
-  // Remover tarefa
+
   const deleteTask = (id) => {
     axios.delete(`http://localhost:3001/tasks/${id}`)
       .then(() => setTasks(tasks.filter(task => task._id !== id)))
@@ -68,6 +69,7 @@ function Home() {
                 </li>
               ))}
             </ul>
+        <Link to="/Admin">Gerenciar usuários</Link>
         </div>
       </div>
   );

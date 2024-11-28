@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";  // Importe useNavigate
+import { Link, useNavigate } from "react-router-dom";  
 import { useState } from "react";
 import axios from "axios";
 
@@ -7,13 +7,13 @@ const Cadastro = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
-  const [error, setError] = useState("");  // Adicionando estado para erro
-  const navigate = useNavigate();  // Usando useNavigate para navegação
+  const [error, setError] = useState("");  
+  const navigate = useNavigate();  
 
   function register(e) {
-    e.preventDefault();  // Previne o envio padrão do formulário
+    e.preventDefault();
 
-    // Validação básica
+    
     if (!email || !password || !confirmPassword) {
       alert("Todos os campos são obrigatórios.");
       return;
@@ -34,16 +34,16 @@ const Cadastro = () => {
       password: password,
     };
 
-    // Enviando dados para o backend usando Axios
+   
     axios
       .post("http://localhost:3001/register", data)
       .then(function (response) {
-        alert(response.data.message);  // Exibe mensagem do servidor
-        // Após o cadastro bem-sucedido, redireciona para a tela de login
-        navigate("/login");  // Redireciona para a tela de login
+        alert(response.data.message); 
+        
+        navigate("/login");  
       })
       .catch(function (error) {
-        // Exibe mensagem de erro do servidor
+  
         if (error.response) {
           setError(error.response.data.message);
         } else {
@@ -57,7 +57,7 @@ const Cadastro = () => {
       <div className="v-100 min-vh-100 d-flex justify-content-center align-items-center">
         <div className="w-25 py-5">
           <h1 className="h3 text-center mb-4">Cadastro</h1>
-          {error && <div className="alert alert-danger">{error}</div>} {/* Exibe erro, se houver */}
+          {error && <div className="alert alert-danger">{error}</div>} 
           <form onSubmit={register}>
             <div className="mb-3">
               <label className="form-label" htmlFor="email">
@@ -73,7 +73,7 @@ const Cadastro = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
-                <span className="input-group-text">@gmail.com</span>
+              
               </div>
             </div>
             <div className="mb-3">
@@ -89,8 +89,6 @@ const Cadastro = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <div className="form-text">A senha deve possuir 8 caracteres</div>
-              <div className="form-text">A senha deve possuir uma letra maiúscula</div>
             </div>
             <div className="mb-3">
               <label className="form-label" htmlFor="confirm-password">

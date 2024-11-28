@@ -82,6 +82,53 @@ app.post('/register', async (req, res) => {
   }
 });
 
+
+app.get('/users', async (req, res) => {
+  try {
+    const users = await user.find(); // Busca todos os usuários
+    res.status(200).json(users);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erro ao buscar usuários' });
+  }
+});
+
+app.delete('/users/:id', async (req, res) => {
+  try {
+    const deletedUser = await user.findByIdAndDelete(req.params.id);
+    if (!deletedUser) {
+      return res.status(404).json({ message: 'Usuário não encontrado' });
+    }
+    res.status(200).json({ message: 'Usuário removido com sucesso' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erro ao remover usuário' });
+  }
+});
+
+app.put('/users/:id', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // Encontra o usuário e atualiza
+    const updatedUser = await user.findById(req.params.id);
+    if (!updatedUser) {
+      return res.status(404).json({ message: 'Usuário não encontrado' });
+    }
+
+    // Atualiza campos, verificando quais foram fornecidos
+    if (email) updatedUser.email = email;
+    if (password) updatedUser.password = password;
+
+    await updatedUser.save();
+    res.status(200).json({ message: 'Usuário atualizado com sucesso', user: updatedUser });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erro ao atualizar usuário' });
+  }
+});
+
+
 app.put('/tasks/:id', async (req, res) => {
   const updatedTask = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
   res.json(updatedTask);

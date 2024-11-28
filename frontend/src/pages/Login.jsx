@@ -15,13 +15,13 @@ const Login = () => {
     const navigate = useNavigate();
 
     const logar = async (dados) => {
-        // Requisição POST para o backend (verifique a URL do seu backend)
+        
         try {
             const response = await axios.post('http://localhost:3001/login', {
                 email: dados.email,
                 password: dados.senha
             });
-            // Caso o login seja bem-sucedido, o usuário é redirecionado
+        
             if (response.status === 200) {
                 setLogado(true);
                 navigate("/Home");
