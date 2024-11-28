@@ -15,7 +15,7 @@ const LandingPage = () => {
                             <Link class="nav-link" to="/Login">Login</Link>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link" to="/Home">Home</Link>
+                            <Link class="nav-link" to="/Cadastro">Cadastrar</Link>
                         </li>
                     </ul>
                     </div>

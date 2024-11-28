@@ -85,7 +85,7 @@ const Admin = () => {
                     value={formData.password}
                     onChange={handleInputChange}
                     />
-                    <button onClick={() => saveEdit(user._id)}>Salvar</button>
+                    <button className='btn btn-success mx-2 p-2' onClick={() => saveEdit(user._id)}>Salvar</button>
                     <button className='btn btn-danger p-2' onClick={() => setEditingUser(null)}>Cancelar</button>
                 </div>
                 ) : (

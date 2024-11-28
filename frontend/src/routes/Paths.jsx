@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { context } from "../Contexts/AuthContext";
 import LandingPage from "../pages/LandingPage";
 import Cadastro from "../pages/Cadastro";
+import Admin from "../pages/Admin"
 
 const Paths = () => {
 
@@ -23,6 +24,7 @@ const Paths = () => {
                         logado &&(
                             <>
                             <Route path="/Home" element={<Home/>}/>
+                            <Route path="/Admin" element={<Admin/>}/>
                             </>
                         )
                     }
