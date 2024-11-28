@@ -1,5 +1,6 @@
-<h1>Como usar?</h1>>
-<p>.Abrir o servido</p>
+<h1>Como usar?</h1>
+
+<p>.Abrir o servidor</p>
 <ul>
   <li>Abrir o cmd na pasta /backend</li>
   <li>Digitar "cd server"</li>
