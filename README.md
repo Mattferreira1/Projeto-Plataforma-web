@@ -16,4 +16,4 @@
 
 </ul>
 
-<p>No final vvoc6e será capaz de utilizar a aplicação normalmente</p>
+<p>No final você será capaz de utilizar a aplicação normalmente</p>
