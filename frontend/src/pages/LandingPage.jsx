@@ -45,7 +45,7 @@ const LandingPage = () => {
                 </div>
             </div>
             <footer className="p-1 bg-secondary text-center">
-                Direitos reservados aos criadores
+                Direitos reservados aos criadores.
             </footer>
         </div>
      );
